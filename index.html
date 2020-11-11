@@ -2,7 +2,9 @@
 <html>
 <head>
 <title>demo1</title>
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
 <style>
 
 * { margin: 0; padding: 0; }
@@ -16,7 +18,7 @@ html {
 body {
 
 
-	background-image: url(img/bg.jpg);
+	background-image: url(img/img.jpg);
 
 
 	background-size: cover;
@@ -43,6 +45,21 @@ body:before {
 
 }
 
+#text{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-size: 15px;
+  line-height: 30px;
+  padding: 30px 20px;
+  text-align: justify;
+  overflow: auto;
+  z-index: 99999;
+  color: #ffffff;
+}
+
 
 
 </style>
@@ -50,7 +67,7 @@ body:before {
 </head>
 
 <body>
-
+<div id="text"></div>
 
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -100,6 +117,30 @@ $(document).ready(function() {
 
 });
 </script>
-
+<script>
+	let divTyping = document.getElementById('text')
+	let i = 0,
+	  timer = 0,
+	  str = 'n宝贝徒儿：n七号见你那晚依然还会像放电影一样在脑海里一帧一帧的回映，我也不知道从何时开始心动，可能见你第一眼开始，这个漫长的故事就已经开始抒写了。n每个人的脑海里都会有一个梦吧，或深或浅，也许你能精准把握，也许你对它茫然无知，但那一定是美好的，那是你对未来的寄托，也是你曾经遇到的所有美好织接而成的那一道心里的彩虹，在遇到你之前，我也抓不住它，遇到了你之后，我彷佛知道了它在哪里！n我不确定我们是从什么时候开始交往的，七号八号或者是九号，不过我更喜欢九号，那是我的幸运数字。算起来短短不到一个月的时间，却像是在我心里跑了好久好久，久到彷佛我们上辈子就认识，久到彷佛我有了灵智，你就一直在我身边是我最亲近的人，我想我们是被彼此吸引着，才会让彼此靠的越来越近吧。n记得你上次问我，爱会消失的对吗，我不知道是否真的有灵魂，如果有，百年之后我会带着对你的爱去往另一个世界，如果没有，那可能就与我一同葬于地下了。我记得你问我是否相信会有来世，其实之前我并不相信有来世的，自从遇见了你，我会希望有来世，希望来世也能陪伴你。n我真的感觉自己很幸运，幸运遇到了你。n若人生就像一条河流，而时间只能固定在一个点，我希望上游全是你的影子，下游全是我们的未来。纵使河流弯曲，亦或遇见悬崖峭壁，我想瀑布也会是一道美丽的风景。幸福也是相对的吧，一个没有经历过痛苦和挫折的人哪能知道幸福的可贵。我想和你一起，不管此时的你一帆风顺，还是满路荆棘，我都想和你一起。n在给你写这些话时，对你的思念总是会扰乱我的思绪，让我不知如何向你表达，所以总是一直断断续续。不知不擅表达的我是否能给你带来一点温暖，但我在很认真的写每一个字，每一句话，以及和你走过的每一段旅程。'
+  
+  var input = ''
+  
+	function typing () {
+	  if (i <= str.length) {
+		input = str.slice(0, i++).replace(/n/g,'<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+		divTyping.innerHTML = input + '_'
+		timer = setTimeout(typing, 130)
+		divTyping.scrollTop = divTyping.scrollHeight;
+	  }
+	  else {
+		divTyping.innerHTML = input//结束打字,移除 _ 光标
+		clearTimeout(timer)
+	  }
+	}
+  
+	setTimeout(function(){
+	  typing(); 
+	},2000)
+  </script>
 </body>
 </html>
