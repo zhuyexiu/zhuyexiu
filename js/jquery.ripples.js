@@ -115,9 +115,9 @@
 			}
 		});
 
-		this.$el.on('mousemove.ripples', function(e) {
+		this.$el.on('touchstart.ripples', function(e) {
 			if (that.visible) that.dropAtMouse(e, that.dropRadius, 0.01);
-		}).on('mousedown.ripples', function(e) {
+		}).on('touchend.ripples', function(e) {
 			if (that.visible) that.dropAtMouse(e, that.dropRadius * 1.5, 0.14);
 		});
 		
