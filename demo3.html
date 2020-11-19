@@ -6,6 +6,10 @@
         <title>demo3</title>
     </head>
     <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
         #div{
             position: fixed;
             left: 0;
@@ -49,7 +53,7 @@
             var item = document.createElement('div')
             item.innerHTML = '想徒儿的第' + i++ + '秒'
             item.style.backgroundImage = "-webkit-linear-gradient(bottom,rgb(" + parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "),rgb("+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "))"
-            item.style.fontSize = parseInt(Math.random()*(35-13+1)+13,10) + 'px'
+            item.style.fontSize = parseInt(Math.random()*(33-13+1)+13,10) + 'px'
             div.appendChild(item)
             round1.style.backgroundImage = "-webkit-linear-gradient(bottom,rgb(" + parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "),rgb("+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "))"
             round1.style.top = parseInt(Math.random()*height,10) + 'px'
