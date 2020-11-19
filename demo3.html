@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>demo3</title>
+    </head>
+    <style>
+        #div{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            padding: 30px;
+        }
+        #div>div{
+            margin-bottom: 10px;
+            -webkit-line-clamp: 2;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .round{
+            position: fixed;
+            z-index: -1;
+            transition: all 1s;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+        }
+    </style>
+    <body>
+        <div id="div"></div>
+        <div class="round" id="round1"></div>
+        <div class="round" id="round2"></div>
+    </body>
+    <script>
+
+        function getNow(){
+            var date = new Date;
+            return date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds() + 1
+        }
+        var div = document.querySelector('#div')
+        var round1 = document.querySelector('#round1')
+        var round2 = document.querySelector('#round2')
+        var i = getNow();
+        var width = document.body.clientWidth - 20
+        var height = document.body.clientHeight - 20
+        console.log(width,height)
+        function add(){
+            var item = document.createElement('div')
+            item.innerHTML = '想徒儿的第' + i++ + '秒'
+            item.style.backgroundImage = "-webkit-linear-gradient(bottom,rgb(" + parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "),rgb("+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "))"
+            item.style.fontSize = parseInt(Math.random()*(39-13+1)+13,10) + 'px'
+            div.appendChild(item)
+            round1.style.backgroundImage = "-webkit-linear-gradient(bottom,rgb(" + parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "),rgb("+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "))";
+            round1.style.top = parseInt(Math.random()*height,10) + 'px'
+            round1.style.left = parseInt(Math.random()*width,10) + 'px'
+            round2.style.backgroundImage = "-webkit-linear-gradient(bottom,rgb(" + parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "),rgb("+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "))";
+            round2.style.top = parseInt(Math.random()*height,10) + 'px';
+            round2.style.left = parseInt(Math.random()*width,10) + 'px';
+        }
+        setInterval(add,1000)
+        
+    </script>
+</html>
