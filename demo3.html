@@ -42,22 +42,21 @@
         var div = document.querySelector('#div')
         var round1 = document.querySelector('#round1')
         var round2 = document.querySelector('#round2')
-        var i = getNow();
+        var i = getNow()
         var width = document.body.clientWidth - 20
         var height = document.body.clientHeight - 20
-        console.log(width,height)
         function add(){
             var item = document.createElement('div')
             item.innerHTML = '想徒儿的第' + i++ + '秒'
             item.style.backgroundImage = "-webkit-linear-gradient(bottom,rgb(" + parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "),rgb("+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "))"
-            item.style.fontSize = parseInt(Math.random()*(39-13+1)+13,10) + 'px'
+            item.style.fontSize = parseInt(Math.random()*(35-13+1)+13,10) + 'px'
             div.appendChild(item)
-            round1.style.backgroundImage = "-webkit-linear-gradient(bottom,rgb(" + parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "),rgb("+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "))";
+            round1.style.backgroundImage = "-webkit-linear-gradient(bottom,rgb(" + parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "),rgb("+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "))"
             round1.style.top = parseInt(Math.random()*height,10) + 'px'
             round1.style.left = parseInt(Math.random()*width,10) + 'px'
-            round2.style.backgroundImage = "-webkit-linear-gradient(bottom,rgb(" + parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "),rgb("+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "))";
-            round2.style.top = parseInt(Math.random()*height,10) + 'px';
-            round2.style.left = parseInt(Math.random()*width,10) + 'px';
+            round2.style.backgroundImage = "-webkit-linear-gradient(bottom,rgb(" + parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "),rgb("+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + ","+ parseInt(Math.random()*255,10) + "))"
+            round2.style.top = parseInt(Math.random()*height,10) + 'px'
+            round2.style.left = parseInt(Math.random()*width,10) + 'px'
         }
         setInterval(add,1000)
         
